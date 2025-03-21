@@ -65,7 +65,16 @@ Workshop workshop = new Workshop(
 );
 
 
-Console.WriteLine(workshop.GetShortWorkshopInfo());
+Workshop bufferWorkshop = new Workshop(workshop);
+bufferWorkshop.Name = "bla";
+
+Console.WriteLine(bufferWorkshop);
+
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
+Console.WriteLine(workshop);
 
 // workshop.ShowShortInfo(Console.Write);
 

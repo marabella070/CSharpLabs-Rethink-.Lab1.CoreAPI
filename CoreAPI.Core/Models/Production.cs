@@ -61,6 +61,14 @@ public abstract class Production : IDisplayable
         ValidatorHelper.ValidateObject(this);
     }
 
+    public Production(Production other)
+    {
+        _name = other._name;
+        _manager = other._manager;
+        _workerCount = other._workerCount;
+        _productList = new List<string>(other._productList);
+    }
+
     // Indexer for accessing the product list by index
     // In C#, indexers do not support validation attributes directly like regular properties.
     public string this[int index]

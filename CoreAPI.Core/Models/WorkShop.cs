@@ -65,6 +65,14 @@ public class Workshop : Production, IIdentifiable
         ValidatorHelper.ValidateObject(this);
     }
 
+    public Workshop(Workshop other) : base(other)
+    {
+        _id = other._id;
+        _brigades = new List<Brigade>(other._brigades);
+        _shifts = new List<Shift>(other._shifts);
+        _schedule = new List<ScheduleElement>(other._schedule);
+    }
+
     /// <summary>
     /// Generates a string representation of the workshop information.
     /// </summary>
