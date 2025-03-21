@@ -40,7 +40,7 @@ foreach (PropertyInfo indexer in type.GetProperties().Where(p => p.GetIndexParam
 var (shifts, scheduleElements) = StandardSchedules.ThreeShiftFiveBrigade;
 
 // Creating Workshop
-Production workshop = new Workshop(
+Workshop workshop = new Workshop(
     name: "Global AutoWorks",
     manager: "Michael Reynolds",
     workerCount: 1200,
@@ -64,7 +64,11 @@ Production workshop = new Workshop(
     schedule: scheduleElements
 );
 
-Console.WriteLine(workshop);
+
+Console.WriteLine(workshop.GetShortWorkshopInfo());
+
+// workshop.ShowShortInfo(Console.Write);
+
 
 /*
 workshop.ShowInfo(Console.Write);

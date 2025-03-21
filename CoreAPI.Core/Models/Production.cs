@@ -127,9 +127,22 @@ public abstract class Production : IDisplayable
         return sb.ToString();
     }
 
+    public string GetShortProductionInfo()
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine($"Production: {Name}");
+        return sb.ToString();
+    }
+
     public virtual void ShowInfo(Action<string> output)
     {
         string info = GetProductionInfo();
+        output(info); // passing the output string
+    }
+
+    public virtual void ShowShortInfo(Action<string> output)
+    {
+        string info = GetShortProductionInfo();
         output(info); // passing the output string
     }
 

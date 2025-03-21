@@ -8,10 +8,14 @@ using System.ComponentModel.DataAnnotations;
 public class Workshop : Production, IIdentifiable
 {
     //! ID
-    private readonly uint _id;
+    private uint _id;
 
     [Range(1, uint.MaxValue, ErrorMessage = "ID must be greater than zero.")]
-    public uint Id => _id;
+    public uint Id 
+    {
+        get => _id;
+        set => ValidatorHelper.SetValueWithValidation(this, ref _id, nameof(Id), value); // Validation and assignment
+    }
 
     //! BRIGADES
     private List<Brigade> _brigades;
@@ -88,6 +92,13 @@ public class Workshop : Production, IIdentifiable
         return sb.ToString();
     }
 
+    public string GetShortWorkshopInfo()
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine($"Workshop №{Id}");
+        return sb.ToString();
+    }
+
     /// <summary>
     /// Displays the workshop information using the provided output method.
     /// </summary>
@@ -99,6 +110,12 @@ public class Workshop : Production, IIdentifiable
     {
         base.ShowInfo(output);
         output("\n" + GetWorkshopInfo());
+    }
+
+    public override void ShowShortInfo(Action<string> output)
+    {
+        base.ShowShortInfo(output);
+        output("\n" + GetShortWorkshopInfo());
     }
 
     public override string ToString()
