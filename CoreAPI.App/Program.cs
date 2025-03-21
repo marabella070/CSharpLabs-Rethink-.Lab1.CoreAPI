@@ -68,6 +68,9 @@ Workshop workshop = new Workshop(
 Workshop bufferWorkshop = new Workshop(workshop);
 bufferWorkshop.Name = "bla";
 
+Console.WriteLine(Workshop.MAX_EMPLOYEES_NUMBER);
+
+
 Console.WriteLine(bufferWorkshop);
 
 Console.WriteLine();

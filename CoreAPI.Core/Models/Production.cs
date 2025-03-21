@@ -8,7 +8,8 @@ using System.ComponentModel.DataAnnotations;
 
 public abstract class Production : IDisplayable
 {
-    const uint MAX_EMPLOYEES_NUMBER = 10_000;
+    public const uint MIN_EMPLOYEES_NUMBER = 1;
+    public const uint MAX_EMPLOYEES_NUMBER = 10_000;
 
     //! NAME
     private string _name;
@@ -34,7 +35,7 @@ public abstract class Production : IDisplayable
     //! WORKER_COUNT
     private uint _workerCount;
 
-    [Range(1, MAX_EMPLOYEES_NUMBER, ErrorMessage = "WorkerCount must be greater than 0.")]
+    [Range(MIN_EMPLOYEES_NUMBER, MAX_EMPLOYEES_NUMBER, ErrorMessage = "WorkerCount must be greater than 0.")]
     public uint WorkerCount
     {
         get => _workerCount;
