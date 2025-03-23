@@ -52,6 +52,15 @@ public abstract class Production : IDisplayable
         set => ValidatorHelper.SetValueWithValidation(this, ref _productList, nameof(ProductList), value); // Validation and assignment
     }
 
+    // To initialize an empty object
+    protected Production() 
+    { 
+        _name = string.Empty;
+        _manager = string.Empty;
+        _workerCount = 0;
+        _productList = new List<string>();
+    }
+
     public Production(string name, string manager, uint workerCount, List<string> productList)
     {
         _name = name;

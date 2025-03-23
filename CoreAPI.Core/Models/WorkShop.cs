@@ -47,6 +47,17 @@ public class Workshop : Production, IIdentifiable
         set => ValidatorHelper.SetValueWithValidation(this, ref _schedule, nameof(Schedule), value); // Validation and assignment
     }
 
+    // To initialize an empty object
+    protected Workshop() : base() 
+    { 
+        _id = 0;
+        _brigades = new List<Brigade>();
+        _shifts = new List<Shift>();
+        _schedule = new List<ScheduleElement>();
+    }
+
+    public static Workshop CreateEmpty() => new Workshop(); // Allowed "empty" version
+    
     public Workshop(string name, 
                     string manager, 
                     uint workerCount, 

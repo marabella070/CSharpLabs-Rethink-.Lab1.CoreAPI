@@ -5,28 +5,8 @@ using System.Runtime.CompilerServices;
 using CoreAPI.Core.Models;
 
 
-
-
-
-
-using System.ComponentModel;
-
-string someBrigadeString = $"1 Alpha";
-
-var converter = TypeDescriptor.GetConverter(typeof(Brigade));
-
-if (converter.CanConvertFrom(typeof(string)))
-{
-    Brigade? someBrigade = (Brigade?)converter.ConvertFrom(someBrigadeString);
-
-    if (someBrigade is null)
-    {
-        Console.WriteLine("Not sucess :(");
-    } else {
-        Console.WriteLine(someBrigade);
-    }
-}
-
+Workshop workshop = Workshop.CreateEmpty();
+Console.WriteLine(workshop);
 
 /*
 var (shifts, scheduleElements) = StandardSchedules.ThreeShiftFiveBrigade;
