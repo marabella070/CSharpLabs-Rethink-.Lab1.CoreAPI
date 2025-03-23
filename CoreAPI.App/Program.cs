@@ -1,42 +1,34 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Data.Common;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 
 using CoreAPI.Core.Models;
 
 
 
 
+
+
+using System.ComponentModel;
+
+string someBrigadeString = $"1 Alpha";
+
+var converter = TypeDescriptor.GetConverter(typeof(Brigade));
+
+if (converter.CanConvertFrom(typeof(string)))
+{
+    Brigade? someBrigade = (Brigade?)converter.ConvertFrom(someBrigadeString);
+
+    if (someBrigade is null)
+    {
+        Console.WriteLine("Not sucess :(");
+    } else {
+        Console.WriteLine(someBrigade);
+    }
+}
+
+
 /*
-using System.Reflection;
-
-Type type = typeof(Workshop);
-
-// Получение всех методов
-Console.WriteLine("Methods:");
-foreach (MethodInfo method in type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
-{
-    Console.WriteLine($"{method.ReturnType.Name} {method.Name}({string.Join(", ", method.GetParameters().Select(p => $"{p.ParameterType.Name} {p.Name}"))})");
-}
-
-// Получение всех свойств
-Console.WriteLine("\nProperties:");
-foreach (PropertyInfo property in type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
-{
-    Console.WriteLine($"{property.PropertyType.Name} {property.Name} {{ get; set; }}");
-}
-
-// Получение индексаторов
-Console.WriteLine("\nIndexers:");
-foreach (PropertyInfo indexer in type.GetProperties().Where(p => p.GetIndexParameters().Length > 0))
-{
-    Console.WriteLine($"{indexer.PropertyType.Name} this[{string.Join(", ", indexer.GetIndexParameters().Select(p => $"{p.ParameterType.Name} {p.Name}"))}] {{ get; set; }}");
-}
-*/
-
-
-
-
-
-
 var (shifts, scheduleElements) = StandardSchedules.ThreeShiftFiveBrigade;
 
 // Creating Workshop
@@ -80,6 +72,10 @@ Console.WriteLine();
 Console.WriteLine(workshop);
 
 // workshop.ShowShortInfo(Console.Write);
+
+*/
+
+
 
 
 /*
