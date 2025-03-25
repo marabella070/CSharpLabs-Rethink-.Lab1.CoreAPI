@@ -17,13 +17,42 @@ public static class WorkshopRandomizer
         // Randomly choose a manager
         string manager = managerNames[random.Next(managerNames.Count)];
 
-        // Randomly select a worker count (between 100 and 5000 workers)
-        uint workerCount = (uint)(random.Next(100, 5001));
-
         // Generate random product list
         var productList = GenerateRandomProductList();
 
-        uint workshopId = (uint)(random.Next(1, 999)); // Generate a random ID between 1 and 999
+        uint workerCount;
+        uint workshopId;
+
+        try
+        {
+            Random random = new Random();
+
+            // Получаем минимальные и максимальные значения
+            uint minWorkerCount = Production.MIN_EMPLOYEES_NUMBER;
+            uint maxWorkerCount = Production.MAX_EMPLOYEES_NUMBER;
+
+            uint minWorkshopId = Workshop.MIN_ID_NUMBER;
+            uint maxWorkshopId = Workshop.MAX_ID_NUMBER;
+
+            // Проверяем, что значения подходят для int
+            if (maxWorkerCount > int.MaxValue || maxWorkshopId > int.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException("Range exceeds valid int range.");
+            }
+
+            // Преобразуем к int только перед использованием random.Next
+            workerCount = minWorkerCount == maxWorkerCount
+                ? minWorkerCount
+                : (uint)random.Next((int)minWorkerCount, (int)maxWorkerCount + 1);
+
+            workshopId = minWorkshopId == maxWorkshopId
+                ? minWorkshopId
+                : (uint)random.Next((int)minWorkshopId, (int)maxWorkshopId + 1);
+        }
+        catch (ArgumentOutOfRangeException ex)
+        {
+            throw new InvalidOperationException("The provided range is out of bounds for int.", ex);
+        }
 
         // Generate a random schedule
         var (shifts, scheduleElements, brigadeCount) = GetRandomSchedule();

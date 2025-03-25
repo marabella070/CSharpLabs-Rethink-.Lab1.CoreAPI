@@ -7,10 +7,13 @@ using System.ComponentModel.DataAnnotations;
 
 public class Workshop : Production, IIdentifiable
 {
+    public const uint MIN_ID_NUMBER = 1;
+    public const uint MAX_ID_NUMBER = int.MaxValue - 1;
+
     //! ID
     private uint _id;
 
-    [Range(1, uint.MaxValue, ErrorMessage = "ID must be greater than zero.")]
+    [Range(MIN_ID_NUMBER, MAX_ID_NUMBER, ErrorMessage = "ID must be greater than zero.")]
     public uint Id 
     {
         get => _id;
