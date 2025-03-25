@@ -5,63 +5,18 @@ using System.Runtime.CompilerServices;
 using CoreAPI.Core.Models;
 
 
-Workshop workshop = Workshop.CreateEmpty();
-Console.WriteLine(workshop);
-
-/*
-var (shifts, scheduleElements) = StandardSchedules.ThreeShiftFiveBrigade;
-
-// Creating Workshop
-Workshop workshop = new Workshop(
-    name: "Global AutoWorks",
-    manager: "Michael Reynolds",
-    workerCount: 1200,
-    productList: new List<string>
-    {
-        "Engine Blocks",
-        "Transmission Systems",
-        "Brake Discs",
-        "Suspension Components",
-        "Electric Vehicle Batteries"
-    },
-    id: 1,
-    new List<Brigade> {
-        new Brigade(1, "Alpha"),
-        new Brigade(2, "Bronson"),
-        new Brigade(3, "Chuck-Norris"),
-        new Brigade(4, "Vortex"),
-        new Brigade(5, "Titan"),        
-    },
-    shifts: shifts,
-    schedule: scheduleElements
-);
-
-
-Workshop bufferWorkshop = new Workshop(workshop);
-bufferWorkshop.Name = "bla";
-
-Console.WriteLine(Workshop.MAX_EMPLOYEES_NUMBER);
-
-
-Console.WriteLine(bufferWorkshop);
+Workshop emptyWorkshop = Workshop.CreateEmpty();
+Console.WriteLine(emptyWorkshop);
 
 Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine();
 
-Console.WriteLine(workshop);
+const int workshopsNumber = 3;
+var workshops = WorkshopRandomizer.GenerateMultipleWorkshops(workshopsNumber);
 
-// workshop.ShowShortInfo(Console.Write);
-
-*/
-
-
-
-
-/*
-workshop.ShowInfo(Console.Write);
-
-Console.WriteLine();
-
-workshop.ShowSchedule(Console.Write);
-*/
+foreach (var workshop in workshops)
+{
+    Console.WriteLine(workshop);
+    Console.WriteLine();
+}
