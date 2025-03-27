@@ -1,0 +1,156 @@
+@startuml
+
+!theme reddress-darkblue
+
+'CLASSES
+
+class Core.Models.Shift
+{
+    Properties:
+    --
+    +TimeSpan StartTime { public get; - set; }
+    +TimeSpan EndTime { public get; - set; }
+    +TimeSpan Duration { public get; - set; }
+
+    Methods:
+    --
+    +String ToString();
+    +Boolean Equals(Object obj);
+    +Int32 GetHashCode();
+}
+
+class Core.Models.Brigade
+{
+    Properties:
+    --
+    +UInt32 Id { public get; - set; }
+    +String Name { public get; public set; }
+
+    Methods:
+    --
+    +String ToString();
+
+}
+
+class Core.Models.BrigadeTypeConverter
+{
+    Methods:
+    --
+    +Boolean CanConvertFrom(ITypeDescriptorContext context, Type sourceType);
+    +Object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value);
+    +Object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, Object value, Type destinationType);
+}
+
+class Core.Models.ScheduleElement
+{
+    Properties:
+    --
+    +UInt32 WorkDays { public get; public set; }
+    +UInt32 RelaxDays { public get; public set; }
+    +Shift Shift { public get; - set; }
+
+    Methods:
+    --
+    +String ToString();
+}
+
+class Core.Models.StandardSchedules
+{
+    Properties:
+    --
+    {static} ValueTuple`2 ThreeShiftFourBrigade
+    {static} ValueTuple`2 ThreeShiftFiveBrigade
+}
+
+class Core.Models.Production 
+{
+    Properties:
+    --
+    +String Name { public get; public set; }
+    +String Manager { public get; public set; }
+    +UInt32 WorkerCount { public get; public set; }
+    +List`1 ProductList { public get; public set; }
+
+    Indexers:
+    --
+    +String this[Int32 index] { public get; public set; }
+
+    Methods:
+    --
+    +Boolean TryAddProduct(String product);
+    +Void AddProduct(String product);
+    +Boolean RemoveProduct(String product);
+    +String GetProductionInfo();
+    +String GetShortProductionInfo();
+    +Void ShowInfo(Action`1 output);
+    +Void ShowShortInfo(Action`1 output);
+    +String ToString();
+    +String GetProductionList();
+    +Void ShowProductionList(Action`1 output);
+
+    --
+    #String FormatList(IEnumerable`1 list, String title, Func`2 formatItem);
+    
+    --
+    -Boolean IsInvalidProduct(String product);
+}
+
+class Core.Models.Workshop
+{
+    Properties:
+    --
+    +UInt32 Id { public get; public set; }
+    +List`1 Brigades { public get; public set; }
+    +List`1 Shifts { public get; public set; }
+    +List`1 Schedule { public get; public set; }
+
+    Methods:
+    --
+    +String GetWorkshopInfo();
+    +String GetShortWorkshopInfo();
+    +Void ShowInfo(Action`1 output);
+    +Void ShowShortInfo(Action`1 output);
+    +String ToString();
+    +Void ShowSchedule(Action`1 output);
+
+    --
+    -Dictionary`2 GenerateSchedule();
+    -Int32 CalculateScheduleLength();
+}
+
+class Core.Models.WorkshopRandomizer
+{
+    Fields:
+    --
+    {static} -Random random;
+    {static} -List`1 productionsNames;
+    {static} -List`1 availableProducts;
+    {static} -List`1 brigadeNames;
+    {static} -List`1 managerNames;
+
+    Methods:
+    --
+    {static} +Workshop GenerateRandomWorkshop();
+    {static} +List`1 GenerateMultipleWorkshops(Int32 count);
+    {static} -List`1 GenerateRandomProductList();
+    {static} -List`1 GenerateRandomBrigades(Int32 brigadeCount);
+    {static} -ValueTuple`3 GetRandomSchedule();
+}
+
+'CLASSES DEPENDECIES
+
+Core.Models.Brigade <.. Core.Models.BrigadeTypeConverter
+
+Core.Models.Shift --o Core.Models.ScheduleElement
+
+Core.Models.ScheduleElement --o Core.Models.StandardSchedules
+
+Core.Models.Production <|-- Core.Models.Workshop
+
+Core.Models.Brigade --o Core.Models.Workshop
+Core.Models.Shift --o Core.Models.Workshop
+Core.Models.ScheduleElement --o Core.Models.Workshop
+
+Workshop <.. WorkshopRandomizer
+
+@enduml

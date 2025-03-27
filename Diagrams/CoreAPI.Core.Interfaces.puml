@@ -1,0 +1,23 @@
+@startuml
+
+!theme reddress-darkblue
+
+'INTERFACES
+
+interface Core.Interfaces.IDisplayable 
+{
+    Methods:
+    --
+    + ShowInfo(Action<string> output)
+}
+
+interface Core.Interfaces.IIdentifiable
+{
+    Properties:
+    --
+    + uint Id { get; - set; }
+}
+
+'INTERFACES DEPENDECIES
+
+@enduml

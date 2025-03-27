@@ -1,0 +1,19 @@
+@startuml
+
+!theme reddress-darkblue
+
+'CLASSES
+
+class System.Exception {}
+
+class Core.Exceptions.InvalidProductException {}
+
+class Core.Exceptions.ProductOutOfRangeException {}
+
+'CLASSES DEPENDECIES
+
+System.Exception <|-- Core.Exceptions.InvalidProductException
+
+System.Exception <|-- Core.Exceptions.ProductOutOfRangeException
+
+@enduml

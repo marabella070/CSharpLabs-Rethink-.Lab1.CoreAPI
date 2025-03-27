@@ -1,0 +1,20 @@
+@startuml
+
+!include CoreAPI.Core.Exceptions.puml
+!include CoreAPI.Core.Helpers.puml
+!include CoreAPI.Core.Interfaces.puml
+!include CoreAPI.Core.Models.puml
+
+'SHARED DEPENDENCIES
+
+'HELPERS PART
+Core.Models.Brigade ..> Core.Helpers.ValidatorHelper
+Core.Models.Shift ..> Core.Helpers.ValidatorHelper
+Core.Models.Production ..> Core.Helpers.ValidatorHelper
+
+'INTERFACES PART
+Core.Interfaces.IDisplayable <|-- Core.Models.Production
+
+Core.Interfaces.IIdentifiable <|-- Core.Models.Workshop
+
+@enduml

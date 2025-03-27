@@ -1,0 +1,19 @@
+@startuml
+
+!theme reddress-darkblue
+
+'CLASSES
+
+class Core.Helpers.ValidatorHelper
+{
+    Methods:
+    --
+    + {static} Void ValidateObject(T obj);
+    + {static} Void SetValueWithValidation(T obj, K& field, String propertyName, K value);
+    - {static} Void ValidateProperty(T obj, String propertyName, K value);
+    + {static} IEnumerable`1 GetNonInheritedProperties(Type type);
+}
+
+'CLASSES DEPENDECIES
+
+@enduml
