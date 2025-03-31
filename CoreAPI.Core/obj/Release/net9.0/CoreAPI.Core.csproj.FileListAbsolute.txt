@@ -1,0 +1,12 @@
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/bin/Release/net9.0/CoreAPI.Core.deps.json
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/bin/Release/net9.0/CoreAPI.Core.dll
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/bin/Release/net9.0/CoreAPI.Core.pdb
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/CoreAPI.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/CoreAPI.Core.AssemblyInfoInputs.cache
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/CoreAPI.Core.AssemblyInfo.cs
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/CoreAPI.Core.csproj.CoreCompileInputs.cache
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/CoreAPI.Core.sourcelink.json
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/CoreAPI.Core.dll
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/refint/CoreAPI.Core.dll
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/CoreAPI.Core.pdb
+/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/Release/net9.0/ref/CoreAPI.Core.dll

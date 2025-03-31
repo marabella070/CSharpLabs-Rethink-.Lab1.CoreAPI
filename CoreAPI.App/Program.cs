@@ -6,7 +6,7 @@ using CoreAPI.Core.Models;
 using CoreAPI.Core.Helpers;
 using System.Reflection;
 
-/*
+
 Workshop emptyWorkshop = Workshop.CreateEmpty();
 Console.WriteLine(emptyWorkshop);
 
@@ -15,15 +15,15 @@ Console.WriteLine();
 Console.WriteLine();
 
 const int workshopsNumber = 3;
-var workshops = WorkshopRandomizer.GenerateMultipleWorkshops(workshopsNumber);
+var workshops = WorkshopRandomizer.GenerateMultiple(workshopsNumber);
 
 foreach (var workshop in workshops)
 {
     Console.WriteLine(workshop);
     Console.WriteLine();
 }
-*/
 
+/*
 Type type = typeof(ValidatorHelper);
 
 Console.WriteLine($"Type: \"{type}\"\n");
@@ -71,6 +71,8 @@ foreach (var method in typeMethods)
 
 }
 Console.WriteLine();
+*/
+
 
 //                                                                                         __         ____     
 //                                                   __    __  ____ ___  ____ __________ _/ /_  ___  / / /___ _

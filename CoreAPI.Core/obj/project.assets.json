@@ -11,7 +11,7 @@
     "/home/marabella/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/CoreAPI.Core.csproj",
       "projectName": "CoreAPI.Core",
@@ -26,6 +26,7 @@
         "net9.0"
       ],
       "sources": {
+        "/home/NuGetPackages/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

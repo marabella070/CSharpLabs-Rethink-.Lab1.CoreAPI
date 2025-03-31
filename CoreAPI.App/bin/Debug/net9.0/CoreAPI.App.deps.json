@@ -8,17 +8,17 @@
     ".NETCoreApp,Version=v9.0": {
       "CoreAPI.App/1.0.0": {
         "dependencies": {
-          "CoreAPI.Core": "1.0.0"
+          "CoreAPI.Core": "1.0.2"
         },
         "runtime": {
           "CoreAPI.App.dll": {}
         }
       },
-      "CoreAPI.Core/1.0.0": {
+      "CoreAPI.Core/1.0.2": {
         "runtime": {
           "CoreAPI.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
           }
         }
       }
@@ -30,7 +30,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CoreAPI.Core/1.0.0": {
+    "CoreAPI.Core/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
