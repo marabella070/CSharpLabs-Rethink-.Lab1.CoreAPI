@@ -2,20 +2,20 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "CoreAPI.Core/1.0.2": {
+      "WorkshopAPI/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/CoreAPI.Core.dll": {}
+          "bin/placeholder/WorkshopAPI.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CoreAPI.Core.dll": {}
+          "bin/placeholder/WorkshopAPI.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "CoreAPI.Core/1.0.2": {
+    "WorkshopAPI/1.0.2": {
       "type": "project",
       "path": "../CoreAPI.Core/CoreAPI.Core.csproj",
       "msbuildProject": "../CoreAPI.Core/CoreAPI.Core.csproj"
@@ -23,7 +23,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "CoreAPI.Core >= 1.0.2"
+      "WorkshopAPI >= 1.0.2"
     ]
   },
   "packageFolders": {
@@ -45,7 +45,6 @@
         "net9.0"
       ],
       "sources": {
-        "/home/NuGetPackages/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

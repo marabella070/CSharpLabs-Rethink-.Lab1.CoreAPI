@@ -5,6 +5,9 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>WorkshopAPI</PackageId>
+    <Authors>marabella070</Authors>
+    <Description>WorkshopAPI</Description>
   </PropertyGroup>
 
 </Project>
