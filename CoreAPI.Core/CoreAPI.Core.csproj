@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>WorkshopAPI</PackageId>
+    <PackageId>Lab1.CoreAPI.Core</PackageId>
     <Authors>marabella070</Authors>
-    <Description>WorkshopAPI</Description>
+    <Description>Lab1.CoreAPI.Core</Description>
   </PropertyGroup>
 
 </Project>

@@ -11,10 +11,10 @@
     "/home/marabella/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "restore": {
       "projectUniqueName": "/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/CoreAPI.Core.csproj",
-      "projectName": "WorkshopAPI",
+      "projectName": "Lab1.CoreAPI.Core",
       "projectPath": "/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/CoreAPI.Core.csproj",
       "packagesPath": "/home/marabella/.nuget/packages/",
       "outputPath": "/home/marabella/Programming/Labs/CSharpLabs/Lab1/CoreAPI/CoreAPI.Core/obj/",
